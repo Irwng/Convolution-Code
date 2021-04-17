@@ -1,0 +1,127 @@
+.....................................................
+Length of bits: 6              Rate: 3             NLoop: 1000000
+var        soft decoder
+0          0.0764707
+1          0.0472293
+2          0.0262838
+3          0.01246
+4          0.00530333
+5          0.00193817
+6          0.000620167
+7          0.000159167
+8          3.71667e-05
+time(s): 0
+...............Viterbi Decoder v3...............
+Length of bits: 144              Rate: 3             NLoop: 1000000
+var        soft decoder
+0             0.065799
+1            0.0342362
+2            0.0148489
+3            0.0052158
+4            0.00149032
+5            0.000342417
+6            6.57986e-05
+7            1.13889e-05
+8            1.90278e-06
+time(s): 3061
+...............Viterbi Decoder v3...............
+Length of bits: 288              Rate: 3             NLoop: 2000000
+var        soft decoder
+0           0.0655157
+1           0.0338979
+2           0.0145265
+3           0.00505798
+4           0.00140133
+5           0.000308807
+6           5.38837e-05
+7           7.75347e-06
+8           1.25347e-06
+9           7.70833e-07
+10          1.5625e-08
+time(s): 16371
+...............Viterbi Decoder v3...............
+Length of bits: 576              Rate: 3             NLoop: 2000000
+var        soft decoder
+0           0.0653725
+1           0.0337477
+2           0.0144141
+3           0.0049789
+4           0.00135914
+5           0.000291357
+6           4.82509e-05
+7           7.34201e-06
+8           1.36632e-06
+9           6.41493e-07
+10          6.06771e-07
+time(s): 38111
+
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+hard decoder based on hamming distance
+Length of coded bits: 900         Rate: 3        NLoop: 10000
+EbN0dB            BER
+time(s): 4
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+hard decoder based on hamming distance
+Length of coded bits: 900         Rate: 3        NLoop: 10000
+EbN0dB            BER
+time(s): 4
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+hard decoder based on hamming distance
+Length of coded bits: 900         Rate: 3        NLoop: 100000
+EbN0dB            BER
+time(s): 40
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+hard decoder based on hamming distance
+Length of coded bits: 900         Rate: 3        NLoop: 100000
+EbN0dB            BER
+time(s): 40
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+soft decoder based on probability
+Length of coded bits: 900         Rate: 3        NLoop: 100000
+EbN0dB            BER
+time(s): 144
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+soft decoder based on probability
+Length of coded bits: 900         Rate: 3        NLoop: 10000
+EbN0dB            BER
+time(s): 14
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+soft decoder based on probability
+Length of coded bits: 900         Rate: 3Punched Points: 1        NLoop: 10000
+EbN0dB            BER
+time(s): 13
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+soft decoder based on probability
+Length of coded bits: 900         Rate: 3Punched Points: 1        NLoop: 100000
+EbN0dB            BER
+time(s): 135
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+soft decoder based on probability
+Length of coded bits: 900         Rate: 3Punched Points: 0        NLoop: 100000
+EbN0dB            BER
+time(s): 138
+.....................................................
+Convolution_Code_with_Viterbi_Decoder
+AWGN
+soft decoder based on probability
+Length of coded bits: 900         Rate: 3Punched Points: 0        NLoop: 100000
+EbN0dB            BER
+time(s): 141
