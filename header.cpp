@@ -7,6 +7,7 @@ Description: header.cpp
 double N_Var;                                       /* variance of Noise */
 double BER_TOTAL = 0;                          /* total number of error bits */
 double BER = 0.0;                          /* total number of error symbols */
+int PunchPoints = 0;
 fstream outfile;
 
 SourceMatrix Source;                                /* source codewords */
@@ -40,8 +41,26 @@ void Initialize(char* argv[]){
         default:
             break;
     }
-    cout<<"Length of coded bits: "<<NJ<<setw(15)<<"Rate: "<<ReciRate<<setw(15)<<"Punched Points: "<<PunchPoints<<setw(15)<<"NLoop: "<<NLoop<<endl;   
-    outfile<<"Length of coded bits: "<<NJ<<setw(15)<<"Rate: "<<ReciRate<<setw(15)<<"Punched Points: "<<PunchPoints<<setw(15)<<"NLoop: "<<NLoop<<endl;   
+    
+    switch (*argv[2])
+    {
+        case '0':
+            PunchPoints = 0;
+            cout<<"Rate = 1/3, PunchPoints = 0"<<endl;
+            outfile<<"Rate = 1/3, PunchPoints = 0"<<endl;
+            break;
+        
+        case '1':
+            PunchPoints = 1;
+            cout<<"Rate = 1/2, PunchPoints = 1"<<endl;
+            outfile<<"Rate = 1/2, PunchPoints = 1"<<endl;
+            break;
+        
+        default:
+            break;
+    }
+    cout<<"Length of coded bits: "<<NJ<<setw(15)<<"NLoop: "<<NLoop<<endl;   
+    outfile<<"Length of coded bits: "<<NJ<<setw(15)<<"NLoop: "<<NLoop<<endl;   
     cout<<"EbN0dB"<<setw(15)<<"BER"<<endl;
     outfile<<"EbN0dB"<<setw(15)<<"BER"<<endl;
 }

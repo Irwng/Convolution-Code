@@ -77,8 +77,8 @@ void ViterbiSoftDecoder(SourceMatrix& source, RecAWGNMatrix& recAWGN, SourceMatr
     }
     
     /* normalization */ 
-    // sum = routeProb[0] + routeProb[1] + routeProb[2] + routeProb[3];
-    // for(auto & tmpprob: routeProb) tmpprob /= sum;
+    sum = routeProb[0] + routeProb[1] + routeProb[2] + routeProb[3];
+    for(auto & tmpprob: routeProb) tmpprob /= sum;
     
     #ifdef DebugMode
         cout<<"routeProb: "<<endl;
@@ -273,17 +273,17 @@ void ViterbiHardDecoder(SourceMatrix& source, RecAWGNMatrix& recAWGN, SourceMatr
     route[2][2] = 2;
     route[3][2] = 3;
 
-    // stateChange[i][j][k]: ??i+1???????????????j+1??????????
-    int stateChange[4][4][3] = {{{0,0,0},{0,1,1},{0,0,0},{0,0,0}},
-                                {{0,0,0},{0,0,0},{0,1,0},{0,0,1}},
-                                {{1,1,1},{1,0,0},{0,0,0},{0,0,0}},
-                                {{0,0,0},{0,0,0},{1,0,1},{1,1,0}}};
+    /* stateChange[i][j][k]: the codeword between the ith node & the jth node, 000 except (0,0) means no link */
+    int stateChange[4][4][3] = {{{ 0, 0, 0},{ 1, 1, 1},{ 0, 0, 0},{ 0, 0, 0}},
+                                {{ 0, 0, 0},{ 0, 0, 0},{ 0, 1, 1},{ 1, 0, 0}},
+                                {{ 1, 1, 1},{ 0, 0, 0},{ 0, 0, 0},{ 0, 0, 0}},
+                                {{ 0, 0, 0},{ 0, 0, 0},{ 1, 0, 0},{ 0, 1, 1}}};
 
-    for(step = 1; step<=2; step++){
-        for(i = 0;i < ReciRate - PunchPoints; i++){
-            for(node = 0;node<NODE;node++){
+    for(step = 1; step <= 2; ++step){
+        for(i = 0;i < ReciRate - PunchPoints; ++i){
+            for(node = 0; node < NODE; ++node){
                 routeHMDistance[node] += abs(DecodeBuff[i + (step-1)*ReciRate] - \
-                stateChange[route[node][step]][route[node][step-1]][i]);
+                                         stateChange[route[node][step]][route[node][step-1]][i]);
             }
         }
     }

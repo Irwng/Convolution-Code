@@ -21,7 +21,6 @@ constexpr int U = 6;                              /* Number of users */
 constexpr int K = 50;                             /* Length of per user's bit stream,length of vector(b)=K*U */
 constexpr int LenBit = U * K;                     /* number of bits of all users */
 constexpr int ReciRate = 3;                       /* reciprocal of the rate */
-constexpr int PunchPoints = 0;                    /* points bunched */
 constexpr int NODE = 4;
 constexpr int Route = NODE;                       /* number of the routes to keep in viterbi decoder */
 constexpr int NJ = LenBit * ReciRate;             /* number of coded bits, J*Nj = K*U*ReciRate,one block per transmissi  on  */
@@ -62,6 +61,7 @@ extern SourceMatrix Decode;
 extern double N_Var;                        /* variance of Noise*/
 extern double BER_TOTAL;                    /* total number of error bits*/
 extern double BER;                          /* error bits rate */
+extern int PunchPoints;                     /* points bunched */
 constexpr double PI = 3.141592653589793;
 
 extern fstream outfile;
